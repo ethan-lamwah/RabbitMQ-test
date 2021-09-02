@@ -32,6 +32,9 @@ Portal: [RabbitMQ Management UI][1]
 ### To check what interface and port is used by a running node
 `rabbitmq-diagnostics -s listeners`
 
+### Listing bindings
+`rabbitmqctl list_bindings`
+
 ### How to solve "TCP connection succeeded but Erlang distribution failed" ?
 >Make sure the same `.erlang.cookie` file is being used in `C:\Windows\System32\config\systemprofile` and `C:\Users\{username}`
 
