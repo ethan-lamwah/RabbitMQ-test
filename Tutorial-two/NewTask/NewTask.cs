@@ -18,7 +18,8 @@ namespace NewTask
                 {
                     //Declare a queue
                     channel.QueueDeclare(queue: "task_queue",
-                                        durable: false,
+                                        // durable: false,
+                                        durable: true,
                                         exclusive: false,
                                         autoDelete: false,
                                         arguments: null);

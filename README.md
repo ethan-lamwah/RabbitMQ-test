@@ -27,7 +27,7 @@ C:\Users\Ethan\AppData\Roaming\RabbitMQ\log
 ### Enable Management UI
 `rabbitmq-plugins enable rabbitmq_management`
 
-Portal: [rabbitmq_management][1]
+Portal: [RabbitMQ Management UI][1]
 
 ### To check what interface and port is used by a running node
 `rabbitmq-diagnostics -s listeners`

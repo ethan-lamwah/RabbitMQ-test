@@ -20,10 +20,15 @@ namespace Worker
                 {
                     //Declare a queue
                     channel.QueueDeclare(queue: "task_queue",
-                                        durable: false,
+                                        // durable: false,
+                                        durable: true,
                                         exclusive: false,
                                         autoDelete: false,
                                         arguments: null);
+
+                    //Fair Dispatch, use this setting to tell RabbitMQ not to give more than one messages to a worker at a time
+                    channel.BasicQos(prefetchSize:0, prefetchCount:1, global: false);
+                    Console.WriteLine(" [*] Waiting for messages.");
 
                     //Tell the server to deliver worker the messages from the queue
                     //Provide a callback since messages are pushed asynchronously                    
@@ -38,10 +43,15 @@ namespace Worker
                         Thread.Sleep(dots * 1000);
 
                         Console.WriteLine(" [x] Done");
+
+                        //Manual message acknowledgement
+                        channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
+                        Console.WriteLine(" [x] Ack");
                     };
 
                     channel.BasicConsume(queue: "task_queue",
-                                        autoAck: true,
+                                        //autoAck: true,
+                                        autoAck: false,
                                         consumer: consumer);
 
                     Console.WriteLine(" Press [enter] to exit.");
