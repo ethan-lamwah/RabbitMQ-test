@@ -2,11 +2,14 @@
 1. "Hello World!"
 2. Work queues
     * Distributing tasks among workers(the [competing consumers pattern][3])
+    * Setting `prefetch = 1` tells RabbitMQ not to dispatch more than one new message to a worker at a time
+    > ![Work queues](https://www.rabbitmq.com/img/tutorials/prefetch-count.png)
 3. Publish/Subscribe
     * Sending messages to many consumers at a time
     * Introducing ***exchange*** in this model. On one side, it receives messages from producers and the other side it pushes them to  subscribed queues.
     * The relationship between *exchange* and queues is called ***binding***
     * use `fanout` exchange type
+    > ![Publish/Subscribe messaging modal](https://www.rabbitmq.com/img/tutorials/python-three-overall.png)
 4. Routing
     * use `direct` exchange type
     * Specify the *binding/routing key*
