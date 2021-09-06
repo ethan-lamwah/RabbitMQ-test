@@ -5,6 +5,7 @@
 3. Publish/Subscribe
     * Sending messages to many consumers at a time
     * Introducing ***exchange*** in this model. On one side, it receives messages from producers and the other side it pushes them to  subscribed queues.
+    * The relationship between *exchange* and queues is called ***binding***
 
 
 
