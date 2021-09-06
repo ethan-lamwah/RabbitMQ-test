@@ -2,6 +2,9 @@
 1. "Hello World!"
 2. Work queues
     * Distributing tasks among workers(the [competing consumers pattern][3])
+3. Publish/Subscribe
+    * Sending messages to many consumers at a time
+    * Introducing ***exchange*** in this model. On one side, it receives messages from producers and the other side it pushes them to  subscribed queues.
 
 
 
@@ -32,8 +35,11 @@ Portal: [RabbitMQ Management UI][1]
 ### To check what interface and port is used by a running node
 `rabbitmq-diagnostics -s listeners`
 
+### Listing exchanges
+use `rabbitmaqctl list_exchanges` to list the exchanges on the server
+
 ### Listing bindings
-`rabbitmqctl list_bindings`
+use `rabbitmqctl list_bindings` to list existing bindings
 
 ### How to solve "TCP connection succeeded but Erlang distribution failed" ?
 >Make sure the same `.erlang.cookie` file is being used in `C:\Windows\System32\config\systemprofile` and `C:\Users\{username}`
