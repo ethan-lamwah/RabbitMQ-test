@@ -9,6 +9,11 @@
     * use `fanout` exchange type
 4. Routing
     * use `direct` exchange type
+    * Specify the *binding/routing key*
+    * The routing algorithm behind a *direct* exchange is simple - a message goes to the queues whose `binding key` exactly matches the `routing key` of the message.
+    
+    > ![messaging modal using direct exhcange type and routing](https://www.rabbitmq.com/img/tutorials/python-four.png)
+
 
 
 
