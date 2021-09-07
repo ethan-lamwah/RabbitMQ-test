@@ -17,6 +17,15 @@
     
     > ![messaging modal using direct exhcange type and routing](https://www.rabbitmq.com/img/tutorials/python-four.png)
 
+5. Topics
+    * use `topic` exchange type
+    * its `routing key` must be a list of words delimited by *dots*
+    * two important special cases for
+    binding keys:
+        * `*`(start) can substitude for exactly one word
+        * `#`(hash) can substitude for zero or more words
+    > ![messaging modal using topic exchange type](https://www.rabbitmq.com/img/tutorials/python-five.png)
+
 
 
 
