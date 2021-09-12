@@ -11,6 +11,7 @@ class EmitLogTopic
         using(var connection = factory.CreateConnection())
         using(var channel = connection.CreateModel())
         {
+            //Use Topic exchange type
             channel.ExchangeDeclare(exchange: "topic_logs",
                                     type: "topic");
 
