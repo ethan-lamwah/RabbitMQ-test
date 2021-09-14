@@ -26,6 +26,10 @@
         * `#`(hash) can substitude for zero or more words
     > ![messaging modal using topic exchange type](https://www.rabbitmq.com/img/tutorials/python-five.png)
 
+6. Remote procedure call (RPC)
+    * build an RPC system: a client and a scalable RPC server
+    *
+
 
 
 
